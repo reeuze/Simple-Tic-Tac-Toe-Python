@@ -1,10 +1,11 @@
 # Simple Tic Tac Toe
 
-def RNG(N):
+def RNG(Isi, Orang):
     Combo = [[0,1,2],[3,4,5],[6,7,8],
              [0,3,6],[1,4,7],[2,5,8],
              [0,4,8],[2,4,6]]
-    return N
+    
+    return Komputer
 
 def Papan(a,b,c,d,e,f,g,h,i):
     print('==========')
@@ -40,16 +41,9 @@ Komputer = 4
 Isi = ['','','','','','','','','']
 Papan(Isi[0], Isi[1], Isi[2], Isi[3], Isi[4], Isi[5], Isi[6], Isi[7], Isi[8])
 while (Terisi<Batas):
-    Orang = input('kotak mana yang ingin diisi :')
+    Orang = input('kotak mana yang ingin diisi : ')
     Orang = int(Orang)
     Main(Orang, Isi, 'X')
-    Komputer = RNG(Komputer)
-    while True:
-        if Isi[Komputer] == '':
-            Main(Komputer, Isi, 'O')
-            break
-        else:
-            print('Ulang')
-            Komputer = RNG(Komputer)
+    Komputer = RNG(Isi, Orang)
     Papan(Isi[0], Isi[1], Isi[2], Isi[3], Isi[4], Isi[5], Isi[6], Isi[7], Isi[8])
     Terisi += 1
